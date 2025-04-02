@@ -1,0 +1,81 @@
+/* Fix background-attachment on mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Profile container */
+.profile-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+    align-items: center; /* Center profile picture and info */
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+/* Profile picture */
+.profile-picture {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Ensure it's a perfect circle */
+    object-fit: cover;
+    border: 3px solid #04477d;
+    margin-bottom: 20px; /* Space between the image and details */
+}
+
+/* Profile information */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left; /* Left-align the details */
+}
+
+.change-pic-button {
+
+    padding: 5px 10px; /* Smaller button padding */
+    background-color: #04477d; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 12px; /* Smaller font size for the button */
+}
+
+.change-pic-button:hover {
+    background-color: #033d5a; /* Darker shade on hover */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%; /* Shrink container on mobile */
+        padding: 20px 20px 60px; /* Add extra padding to allow space for profile image */
+    }
+
+    .profile-picture {
+        position: relative;
+        top: -20px; /* Position image on top */
+        margin-left: auto;
+        margin-right: auto;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #04477d;
+    }
+
+    .profile-info {
+        text-align: left; /* Center the text */
+        margin-top: 60px; /* Add margin on top to prevent text overlap with image */
+    }
+}

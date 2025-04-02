@@ -1,0 +1,97 @@
+/*SHS Programs CSS*/
+/* General Styling */
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.track-section {
+    margin-bottom: 50px;
+}
+
+.track-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.track-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #004080;
+}
+
+/* Dynamic Grid Layout */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts dynamically */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Course Card Styling */
+.course-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.course-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.course-description {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Expandable Specializations */
+.subcategory-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    display: none;
+}
+
+.subcategory-list li {
+    font-size: 14px;
+    color: #555;
+    padding: 3px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+}
+
+.badge {
+    font-size: 30px; /* Adjust size as needed */
+    font-weight: bold;
+    padding: 10px 20px;
+    color: #04477d;
+    display: inline-block;
+    text-transform: proper;
+}

@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1.display-4 {
+    color: #004080 !important;
+    font-weight: bolder;
+}
+
+.navbar {
+    height: 70px; /* Set a specific height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding-top: 0px; /* Adjust padding */
+    padding-bottom: 0px;
+    background-color: #004080 !important;
+    width: 100%;
+    height: auto;
+    position: relative; /* Ensure the navbar is positioned relative for absolute children */
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+    color: white;
+}
+
+.navbar-collapse {
+    display: none; /* Initially hidden */
+}
+
+.navbar-collapse.show {
+    display: flex; /* Show when toggled */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position the navbar items absolutely */
+    top: 60px; /* Position it below the navbar */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: #004080; /* Match the navbar background */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: normal;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(0, 64, 128, 0.1); /* Light blue background on hover */
+    border-radius: 5px;
+}
+
+/* Ensure carousel images resize well */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Restore Header Layout */
+header {
+    width: 100%;
+    background-color: #004080;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap in small screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #f0a500;
+}
+
+/* Student Portal Button Style */
+.portal-button {
+    background-color: #ffcc00;
+    color: #04477d !important;
+    font-weight: bold !important;
+    transition: 0.3s;
+}
+
+.portal-button:hover {
+    background-color: #ffcc00d7 !important;
+    color: black !important;
+}
+
+/* Footer Fix: Prevent Overlap */
+footer {
+    width: 100%;
+    position: sticky;
+    background-color: #004080 !important;  /* Navbar color */
+    color: white;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: auto; 
+}
+
+/* Styling for footer links */
+footer .footer-links a {
+    font-weight: normal;  /* Ensure links are not bold */
+    transition: all 0.3s ease-in-out;  /* Smooth transition for hover effect */
+    text-decoration: none;  /* Remove the underline */
+}
+
+/* Footer links on hover */
+footer .footer-links a:hover {
+    text-decoration: underline;  /* Optional: underline on hover */
+    font-weight: bold;  /* Optional: make bold on hover */
+}
+
+/* Logo and text styling */
+footer .footer-logo-container img {
+    width: 50px;  /* Ensuring consistent logo size */
+}
+
+/* Styling the footer text block */
+footer .ms-3 {
+    margin-left: 15px;
+}
+
+footer .ms-3 h1, footer .ms-3 p {
+    margin: 0;  /* Removing margin to have better control over spacing */
+}
+
+/* For responsive behavior */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        text-align: center; /* Center align text */
+    }
+    footer .footer-links {
+        margin-top: 15px;
+        justify-content: center;
+    }
+}
+
+
+/* Adjust Background Image Path */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/images/limayshsbackground.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+
+/* Ensure main content is vertical */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Adjust Button Padding (Bootstrap px-6 Fix) */
+.btn-enroll {
+    background-color: #004080;
+    color: white;
+    padding: 12px 24px; /* Adjusted padding manually */
+    font-size: 35px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    position: relative;
+    top: -20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: #002b5c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix background-attachment on mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Media Queries for Navbar */
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        text-align: left;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        padding: 15px;
+        color: white !important;
+        font-weight: normal;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+    }
+
+    /* Shrink the logo on mobile */
+    header .logo {
+        font-size: 20px; /* Reduced size for mobile */
+    }
+
+    /* Adjust navigation links on mobile */
+    header nav a {
+        font-size: 14px; /* Smaller font size for nav links */
+    }
+
+    /* Optionally adjust the gap in navigation for mobile view */
+    header nav {
+        gap: 10px; /* Reduce the gap between nav items */
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        flex-direction: row; /* Make sure nav items are in a row on large screens */
+        gap: 15px;
+        position: static; /* Reset position for larger screens */
+        display: flex; /* Ensure items are displayed */
+    }
+}

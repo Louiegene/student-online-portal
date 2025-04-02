@@ -1,0 +1,28 @@
+{
+    "short_name": "Limay SHS",
+    "name": "Limay Senior High School",
+    "icons": [
+      {
+        "src": "../../public/assets/images/favicon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "../../public/assets/images/favicon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "../../public/assets/images/LimaySHS.svg",
+        "sizes": "any",
+        "type": "image/svg+xml"
+      }
+    ],
+    "start_url": "index.html?source=pwa",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "scope": "/",
+    "description": "Welcome to Limay Senior High School, leading students to holistic success.",
+    "orientation": "portrait"
+  }
