@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const submitBtn = form.querySelector("button[type='submit']");
     if (!submitBtn) {
-        console.error('Submit button not found!');
+        //console.error('Submit button not found!');
         return;
     }
 
