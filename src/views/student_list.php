@@ -21,6 +21,7 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../public/assets/css/styles.css">
+    <link rel="stylesheet" href="../../public/assets/css/enrollment_status_style.css">
 
      <!-- Bootstrap Bundle with Popper.js -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -303,7 +304,10 @@
           <li class="list-group-item"><strong>Gender:</strong> <span id="info-gender"></span></li>
           <li class="list-group-item"><strong>Birthdate:</strong> <span id="info-birthdate"></span></li>
           <li class="list-group-item"><strong>Enrollment Date:</strong> <span id="info-enrollment"></span></li>
-          <li class="list-group-item"><strong>Enrollment Status:</strong> <span id="info-status"></span></li>
+          <li class="list-group-item">
+            <strong>Enrollment Status:</strong> 
+            <span id="info-status"></span>
+          </li>
           <li class="list-group-item"><strong>Grade Level & Section:</strong> <span id="info-grade-section"></span></li>
           <li class="list-group-item"><strong>Track:</strong> <span id="info-track"></span></li>
           <li class="list-group-item"><strong>Strand:</strong> <span id="info-strand"></span></li>
@@ -374,8 +378,9 @@
               <label for="edit-enrollment-status" class="form-label">Enrollment Status</label>
               <select class="form-select" id="edit-enrollment-status" name="enrollment_status" required>
                 <option value="Enrolled">Enrolled</option>
-                <option value="Not Enrolled">Dropped</option>
-                <option value="Dropped">No Longer Participating (NLP)</option>
+                <option value="Dropped">Dropped</option>
+                <option value="Transferred Out">Transferred Out</option>
+                <option value="No Longer Participating (NLP)">No Longer Participating (NLP)</option>
               </select>
             </div>
           </div>
@@ -437,7 +442,7 @@
         <script src="../../public/assets/js/add_student.js"></script>
         <script src="../../public/assets/js/search_student.js"></script>
         <script src="../../public/assets/js/check_username_email.js"></script>
-        <!-- <script src="../../public/assets/js/view_student_profile_pic.js"></script> -->
+        <script src="../../public/assets/js/enrollment_status.js"></script>
         
 
         <script>

@@ -1,0 +1,44 @@
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    border-radius: 20px;  /* Round the badge more */
+    font-size: 0.8rem;     /* Slightly larger font */
+    font-weight: 600;
+    background: #6c757d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a badge effect */
+    transition: background 0.3s ease, transform 0.2s ease;
+    min-width: 140px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Specific Status Badge Colors */
+.status-badge.enrolled {
+    background: linear-gradient(to right, #7ee797, #7ee797); /* Green gradient */
+    border: 2px solid #1c7d33;
+    color: #1c7d33;
+}
+
+.status-badge.dropped {
+    background: linear-gradient(to right, #ffaa66, #ffaa66); /* Orange gradient */
+    border: 2px solid #ef6f06;
+    color: #ef6f06;
+}
+
+.status-badge.nlp {
+    background: linear-gradient(to right, #e54750, #e54750); /* Red gradient */
+    border: 2px solid #dc3545;
+    color: #dc3545;
+}
+
+.status-badge.unknown {
+    background: linear-gradient(to right, #6c757d, #495057); /* Gray fallback */
+    border: 2px solid #6c757d;
+}
+
+.status-badge:hover {
+    transform: scale(1.05);  /* Slight hover effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* More prominent shadow on hover */
+}

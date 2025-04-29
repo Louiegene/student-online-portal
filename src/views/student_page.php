@@ -93,6 +93,7 @@ try {
     <link rel="stylesheet" href="../../public/assets/css/studentprofilestyle.css">
     <link rel="stylesheet" href="../../public/assets/css/tablestyle.css">
     <link rel="stylesheet" href="../../public/assets/css/cropper.css">
+    <link rel="stylesheet" href="../../public/assets/css/enrollment_status_style.css">
     
 </head>
     <body>
@@ -223,7 +224,7 @@ try {
                 <span id="strand"><?php echo htmlspecialchars($student['specific_strand'] ?? 'N/A'); ?></span>
             </p>
             <p class="mb-0"><strong>Enrollment Status:</strong> 
-                <span id="status"><?php echo htmlspecialchars($student['enrollment_status'] ?? 'N/A'); ?></span>
+                <span id="info-status"><?php echo htmlspecialchars($student['enrollment_status'] ?? 'N/A'); ?></span>
             </p>
         </div>
     </div>
@@ -252,5 +253,6 @@ try {
         <script src="../../public/assets/js/username.js"></script>
         <script src="../../public/assets/js/get_profile_picture.js"></script>
         <script src="../../public/assets/js/change_profile_picture.js"></script>
+        <script src="../../public/assets/js/enrollment_status.js"></script>
     </body>
 </html>

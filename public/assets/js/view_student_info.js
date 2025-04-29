@@ -89,7 +89,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById('info-gender').textContent = s.gender;
                     document.getElementById('info-birthdate').textContent = s.birthdate;
                     document.getElementById('info-enrollment').textContent = s.enrollment_date;
-                    document.getElementById('info-status').textContent = s.enrollment_status || 'N/A';
+                    const statusElement = document.getElementById('info-status');
+                    const statusText = s.enrollment_status || 'N/A';
+                    let badgeClass = '';
+
+                    switch (statusText) {
+                        case 'Enrolled':
+                            badgeClass = 'enrolled';
+                            break;
+                        case 'Dropped':
+                            badgeClass = 'dropped';
+                            break;
+                        case 'No Longer Participating':
+                            badgeClass = 'nlp';
+                            break;
+                        default:
+                            badgeClass = 'unknown';
+                    }
+
+                    statusElement.innerHTML = `<span class="status-badge ${badgeClass}">${statusText}</span>`;
                     document.getElementById('info-grade-section').textContent = `${s.grade_level} - ${s.section}`;
                     document.getElementById('info-track').textContent = s.trackname || 'N/A';
                     document.getElementById('info-strand').textContent = s.strandname || 'N/A';
