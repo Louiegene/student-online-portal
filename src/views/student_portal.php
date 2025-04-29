@@ -69,7 +69,7 @@
                 <h2>Student Portal Login</h2>
                 <form id="loginForm" action="../../src/controllers/login.php" method="POST">
                     <div class="input-group">
-                        <input type="text" name="username" id="username" placeholder="Username" required>
+                        <input type="text" name="username" id="username" placeholder="Username" class="form-control" required>
                     </div>
                 
                     <div class="input-group">

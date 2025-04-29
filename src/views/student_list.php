@@ -182,7 +182,7 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                         <label for="username">Username</label>
-                            <input type="text" id="username" name="username" class="form-control" required>
+                            <input type="text" id="username" name="username" required>
                             <span id="username-feedback" class="text-sm"></span>
                             <small id="username-feedback" class="form-text"></small>
                         </div>
@@ -296,7 +296,6 @@
         <div class="text-center mb-3">
           <img id="studentProfilePic" src="../../public/assets/images/user_profile.png" alt="Profile Picture" class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
         </div>
-
         <!-- Info List -->
         <ul class="list-group">
           <li class="list-group-item"><strong>LRN:</strong> <span id="info-lrn"></span></li>
@@ -311,12 +310,13 @@
           <li class="list-group-item"><strong>Specific Strand:</strong> <span id="info-specific-strand"></span></li>
         </ul>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
 <!-- End of View Student Modal -->
-
-
 
   <!-- Change Password Modal -->
   <div class="modal fade" id="adminChangePasswordModal" tabindex="-1" aria-labelledby="adminChangePasswordModalLabel" aria-hidden="true">
@@ -424,8 +424,6 @@
         <!--Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
-       
-
         <!-- jQuery (if needed) -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -439,6 +437,8 @@
         <script src="../../public/assets/js/add_student.js"></script>
         <script src="../../public/assets/js/search_student.js"></script>
         <script src="../../public/assets/js/check_username_email.js"></script>
+        <!-- <script src="../../public/assets/js/view_student_profile_pic.js"></script> -->
+        
 
         <script>
         // Generate password from birthday
