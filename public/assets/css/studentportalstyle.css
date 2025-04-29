@@ -115,11 +115,18 @@ input {
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background-color: rgba(255, 255, 255, 0.8);
   border: none;
   cursor: pointer;
   color: #666;
   font-size: 18px;
+  z-index: 10;
+}
+
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+  color: #333;
 }
 
 .forgot-password {

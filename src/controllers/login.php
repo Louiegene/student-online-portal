@@ -1,44 +1,87 @@
 <?php
 session_start();
-require 'config.php';
+require '../../config.php'; // Include the config file
+header("Content-Type: application/json");
 
-header('Content-Type: application/json'); // Ensure response is JSON
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo json_encode(["status" => "error", "message" => "Invalid request method."]);
+// Check if the database connection is initialized
+if (!isset($pdo)) {
+    error_log("Database connection not initialized.");
+    http_response_code(500);
+    echo json_encode(["status" => "error", "message" => "Database connection error."]);
     exit;
 }
 
-$username = trim($_POST['username']);
-$password = trim($_POST['password']);
+// Check if the request method is POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["status" => "error", "message" => "Method Not Allowed."]);
+    exit;
+}
+
+// Retrieve username and password from the POST data
+$username = $_POST['username'] ?? null;
+$password = $_POST['password'] ?? null;
+
+// Check if username and password are provided
+if (empty($username)) {
+    http_response_code(400); // Bad Request
+    echo json_encode(["status" => "error", "message" => "Username is required."]);
+    exit;
+}
+if (empty($password)) {
+    http_response_code(400); // Bad Request
+    echo json_encode(["status" => "error", "message" => "Password is required."]);
+    exit;
+}
 
 try {
-    $stmt = $pdo->prepare("SELECT user_id, username, password, first_name, last_name FROM Users WHERE username = ?");
+    // Prepare SQL statement to join Users and student_info tables
+    $stmt = $pdo->prepare("
+        SELECT 
+            u.user_id, u.username, u.password, u.role, 
+            si.first_name, si.last_name 
+        FROM Users u
+        LEFT JOIN student_info si ON u.user_id = si.user_id
+        WHERE u.username = ?
+    ");
     $stmt->execute([$username]);
 
     if ($stmt->rowCount() === 1) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (hash('sha256', $password) === $row['password']) {
-            // Store user details in session
+        if (password_verify($password, $row['password'])) {
+            session_regenerate_id(true); // Regenerate session ID for security
+        
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
-            $_SESSION['first_name'] = $row['first_name'];
-            $_SESSION['last_name'] = $row['last_name'];
-
-            // Debugging: Check session values
-            error_log("Session Data: " . print_r($_SESSION, true));
-
-            echo json_encode(["status" => "success"]);
+            $_SESSION['role'] = $row['role'];
+        
+            http_response_code(200); // OK
+            echo json_encode([
+                "status" => "success", 
+                "message" => "Login successful.",
+                "username" => $row['username'],
+                "role" => $row['role'],
+                "first_name" => $row['first_name'],
+                "last_name" => $row['last_name']
+            ]);
             exit;
-        }
+        }        
     }
 
-    // Either username not found or incorrect password
-    echo json_encode(["status" => "error", "message" => "❌ Invalid username or password."]);
-} catch (PDOException $e) {
-    error_log("Database Error: " . $e->getMessage());
-    echo json_encode(["status" => "error", "message" => "Database error."]);
+    // Authentication failed
+    http_response_code(401); // Unauthorized
+    echo json_encode(["status" => "error", "message" => "Invalid username or password."]);
+    exit;
+
+} catch (Exception $e) {
+    error_log("Error in login.php: " . $e->getMessage()); // Log the error
+    http_response_code(500);
+    echo json_encode(["status" => "error", "message" => "An internal error occurred. Please contact support."]);
+    exit;
 }
-exit;
 ?>

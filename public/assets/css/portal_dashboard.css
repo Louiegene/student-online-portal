@@ -1,0 +1,111 @@
+.main-content {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    justify-content: center; /* Center the cards on smaller screens */
+}
+
+.card {
+    width: 250px; /* Set a fixed width for the card */
+    min-height: 200px; /* Set a minimum height for consistency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Ensure space between content and title */
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 10px; /* Add spacing between cards */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically inside the card */
+    justify-content: space-between; /* Space out content and title */
+    height: 100%; /* Ensure content fills the height of the card */
+    align-items: center;
+}
+
+.card-info {
+    flex: 1; /* Make the content part flexible */
+    margin-bottom: 10px; /* Add spacing between content and title */
+}
+
+.card-icons {
+    display: flex; /* Align the icons horizontally */
+    justify-content: space-between; /* Space the icons evenly */
+    width: 100%; /* Ensure it spans the width of the card */
+    margin-bottom: 5px; /* Space between icons and title */
+}
+
+.card-title {
+    margin-top: auto; /* Push the title to the bottom of the card */
+    text-align: center;
+    font-size: 20px;
+}
+
+.card-title p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Card icon styles */
+.card i {
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-icon-left {
+    margin-right: 10px;
+}
+
+.card-icon-right {
+    margin-left: 10px;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}
+
+.card i {
+    color: white;
+}
+
+.card:hover i {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        justify-content: center; /* Center cards on medium screens */
+    }
+
+    .card {
+        width: 45%; /* Reduce width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard {
+        justify-content: center; /* Center cards on smaller screens */
+    }
+
+    .card {
+        width: 90%; /* Take up more width on very small screens */
+    }
+}

@@ -24,8 +24,7 @@ h1.display-4 {
 }
 
 .nav-link.active {
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: bold !important;
 }
 
 .navbar-toggler-icon {
@@ -219,6 +218,60 @@ main {
     background-color: #002b5c;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Modal body styling */
+.modal-body {
+    max-height: 80vh !important;   /* Default max height for larger screens */
+    overflow-y: auto !important;   /* Make the content scrollable if it's too long */
+}
+
+.form-text {
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .modal-dialog {
+        max-width: 100%;  /* Ensure the modal takes full width on mobile */
+        margin: 10px;     /* Add some margin around the modal */
+    }
+
+    .modal-body {
+        max-height: 60vh; /* Adjust max-height for smaller screens */
+        padding: 15px;    /* Add some padding inside modal for better spacing */
+    }
+
+    .modal-header {
+        padding: 10px;    /* Reduce header padding for smaller screens */
+    }
+
+    .modal-title {
+        font-size: 1.25rem;  /* Slightly smaller title font */
+    }
+
+    .btn-close {
+        font-size: 1.25rem;  /* Increase close button size for easier click */
+    }
+}
+
+/* For very small screens (e.g., mobile devices in portrait mode) */
+@media (max-width: 480px) {
+    .modal-body {
+        max-height: 50vh;   /* Further reduce max height for tiny screens */
+        padding: 10px;      /* Even less padding */
+    }
+
+    .modal-header {
+        padding: 8px;       /* Even less padding for small screens */
+    }
+
+    .modal-title {
+        font-size: 1.125rem;  /* Further reduce the title size */
+    }
 }
 
 /* Fix background-attachment on mobile */

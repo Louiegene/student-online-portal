@@ -1,97 +1,157 @@
-/*SHS Programs CSS*/
-/* General Styling */
-.main-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+/* Root Variables (optional, for easier theme management) */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --muted-text: #666;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+    --hover-gray: #e9e9e9;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease;
 }
 
+/* General Styling */
 .track-section {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .track-header {
-    text-align: center;
     margin-bottom: 20px;
 }
 
 .track-title {
-    font-size: 30px;
+    color: var(--secondary-color);
+    font-size: 28px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Card Layout */
+.course-card {
+    position: relative;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    background-color: #fff;
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+/* Hover Effect for Cards */
+.course-card:hover {
+    box-shadow: 0 6px 16px var(--card-shadow);
+    transform: translateY(-3px);
+}
+
+/* Image Styling */
+.course-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Title Styling */
+.course-title {
+    margin-top: 0;
+    font-size: 22px;
+    color: #004080;
     font-weight: bold;
+}
+
+/* Description Styling */
+.course-description {
+    color: var(--muted-text);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Expand Button Styling */
+.expand-indicator {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 12px;
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: background-color var(--transition), color var(--transition);
+    font-size: 14px;
+    float: right;
+}
+
+.expand-indicator:hover,
+.expand-indicator:focus {
+    background-color: var(--hover-gray);
+    outline: none;
     color: #004080;
 }
 
-/* Dynamic Grid Layout */
-.course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts dynamically */
-    gap: 20px;
-    justify-content: center;
+.expand-indicator i {
+    transition: transform var(--transition);
 }
 
-/* Course Card Styling */
-.course-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    padding: 15px;
+/* When expanded, rotate icon (if JS toggles a class like `.rotated`) */
+.expand-indicator.rotated i {
+    transform: rotate(180deg);
 }
 
-.course-card:hover {
-    transform: translateY(-5px);
-}
-
-.course-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.course-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
-}
-
-.course-description {
-    font-size: 14px;
-    color: #666;
-}
-
-/* Expandable Specializations */
+/* Subcategory List Styling */
 .subcategory-list {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
     display: none;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    list-style: disc;
+    list-style-position: inside;
+    transition: all var(--transition);
+}
+
+.subcategory-list.active {
+    display: block;
 }
 
 .subcategory-list li {
-    font-size: 14px;
+    margin-bottom: 10px;
     color: #555;
-    padding: 3px 0;
+    font-size: 14px;
 }
 
-/* Responsive Design */
+/* Grid Layout */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* 2 columns for Academic Tracks */
+.course-grid.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 columns for TVL Track */
+.course-grid.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+    .track-title {
+        font-size: 24px;
+    }
+
+    .course-title {
+        font-size: 20px;
+    }
+
+    /* 1 column on small screens */
     .course-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
-
-    .course-card {
-        padding: 20px;
-    }
-}
-
-.badge {
-    font-size: 30px; /* Adjust size as needed */
-    font-weight: bold;
-    padding: 10px 20px;
-    color: #04477d;
-    display: inline-block;
-    text-transform: proper;
 }

@@ -5,19 +5,23 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>SHS Programs - Limay Senior High School</title>
     <link rel="icon" href="/favicon.ico" sizes="16x16" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/images/favicon-16x16.png">
     <meta name="description" content="Welcome to Limay Senior High School, leading students to holistic success.">
     <meta name="keywords" content="Limay, Senior High School, Education, Enrollment, Programs">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../public/assets/css/bootstrap/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <script src="https://kit.fontawesome.com/194398f2ad.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <link rel="stylesheet" href="../../public/assets/css/styles.css">
     <link rel="stylesheet" href="../../public/assets/css/programstyle.css">
+    <style>
+    
+    </style>
 </head>
 <body>
 
@@ -49,7 +53,7 @@
                         <li class="nav-item"><a class="nav-link text-white" href="../../src/views/about_us.html" data-page="about">About Us</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="../../src/views/contact_us.html" data-page="contact">Contact Us</a></li>
                         <li class="nav-item">
-                            <a class="nav-link portal-button px-4 py-2 rounded-pill text-white mb-2" href="../../src/views/student_portal.html">
+                            <a class="nav-link portal-button px-4 py-2 rounded-pill text-white mb-2" href="../../src/views/student_portal.php">
                                 Student Portal
                             </a>
                         </li>
@@ -61,113 +65,140 @@
 
     <main class="container text-center py-5">
         <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-pattern"></div>
-            <div class="hero-content">
-                <h1 class="display-4 fw-bold mb-3">Programs</h1>
-                <h1 class="hero-title">Discover Our Specialized Courses</h1>
-                <p class="hero-description">
-                    Explore our comprehensive curriculum designed to prepare students for academic excellence and limitless opportunities.
-                </p>
-            </div>
+          <div class="hero-overlay"></div>
+          <div class="hero-pattern"></div>
+          <div class="hero-content">
+            <h1 class="display-4 fw-bold mb-3">Program Offerings</h1>
+            <h2 class="hero-title">Discover Our Specialized Courses</h2>
+            <p class="hero-description">
+              Explore our comprehensive curriculum designed to prepare students for academic excellence and limitless opportunities.
+            </p>
+          </div>
         </section>
-    
-        <!-- Academic Track -->
-        <section class="track-section">
+      
+       <!-- Academic Tracks -->
+        <section class="academic-tracks">
             <div class="track-header">
-                <h2 class="track-title">Academic Track</h2>
+            <h2 class="track-title">Academic Track</h2>
             </div>
-            <div class="course-grid">
-                <div class="course-card">
-                    <img src="../../public/assets/images/stem.png" alt="STEM" class="course-image">
-                    <h3 class="course-title">Science, Technology, Engineering & Mathematics (STEM)</h3>
-                    <p class="course-description">Focuses on teaching students to solve problems, think critically, and be creative. STEM education also emphasizes project-based learning and practical skills. 
-                    </p>
+            <div class="course-grid two-columns">
+            <!-- STEM Track -->
+            <article class="course-card">
+                <img src="../../public/assets/images/stem.png" alt="STEM Track" class="course-image">
+                <h3 class="course-title">Science, Technology, Engineering & Mathematics (STEM)</h3>
+                <p class="course-description">Focuses on teaching students to solve problems, think critically, and be creative. STEM education also emphasizes project-based learning and practical skills.</p>
+                <button class="expand-indicator" id="stem-indicator" aria-label="Expand STEM details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="subcategory-list" id="stem">
+                <p class="course-description"><strong>Possible Careers:</strong> Engineer, Doctor, Scientist, Programmer, Mathematician, Architect, Environmental Specialist, Data Analyst, Researcher, Pharmacist</p>
                 </div>
-                <div class="course-card">
-                    <img src="../../public/assets/images/abm.png" alt="ABM" class="course-image">
-                    <h3 class="course-title">Accountancy, Business & Management (ABM)</h3>
-                    <p class="course-description">Focuses on equipping students with foundational knowledge and skills in business management, financial concepts, corporate operations, and accounting, preparing them for careers in these areas. 
-                    </p>
+            </article>
+        
+            <!-- ABM Track -->
+            <article class="course-card">
+                <img src="../../public/assets/images/abm.png" alt="ABM Track" class="course-image">
+                <h3 class="course-title">Accountancy, Business & Management (ABM)</h3>
+                <p class="course-description">Focuses on equipping students with foundational knowledge and skills in business management, financial concepts, corporate operations, and accounting.</p>
+                <button class="expand-indicator" id="abm-indicator" aria-label="Expand ABM details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="subcategory-list" id="abm">
+                <p class="course-description"><strong>Possible Careers:</strong> Accountant, Financial Analyst, Entrepreneur, Marketing Manager, Human Resources Manager, Business Consultant, Investment Banker, Economist, Operations Manager, Real Estate Agent</p>
                 </div>
-                <div class="course-card">
-                    <img src="../../public/assets/images/humss.png" alt="HUMSS" class="course-image">
-                    <h3 class="course-title">Humanities and Social Sciences (HUMSS)</h3>
-                    <p class="course-description">Focuses on the study of human behavior, societal issues, culture, and the arts, equipping students with skills in communication, critical thinking, and research, preparing them for careers in fields like journalism, education, and social work.</p>
+            </article>
+        
+            <!-- HUMSS Track -->
+            <article class="course-card">
+                <img src="../../public/assets/images/humss.png" alt="HUMSS Track" class="course-image">
+                <h3 class="course-title">Humanities and Social Sciences (HUMSS)</h3>
+                <p class="course-description">Focuses on the study of human behavior, societal issues, culture, and the arts.</p>
+                <button class="expand-indicator" id="humss-indicator" aria-label="Expand HUMSS details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="subcategory-list" id="humss">
+                <p class="course-description"><strong>Possible Careers:</strong> Lawyer, Teacher, Psychologist, Journalist, Social Worker, Public Relations Specialist, Political Scientist, Historian, Sociologist, Foreign Service Officer</p>
                 </div>
-                <div class="course-card">
-                    <img src="../../public/assets/images/gas.png" alt="GAS" class="course-image">
-                    <h3 class="course-title">General Academic Strand (GAS)</h3>
-                    <p class="course-description">focuses on providing a broad, generalist approach to preparing students for college, allowing them to explore various disciplines and make informed decisions about their future academic paths.</p>
+            </article>
+        
+            <!-- GAS Track -->
+            <article class="course-card">
+                <img src="../../public/assets/images/gas.png" alt="GAS Track" class="course-image">
+                <h3 class="course-title">General Academic Strand (GAS)</h3>
+                <p class="course-description">Focuses on providing a broad, generalist approach to college preparation.</p>
+                <button class="expand-indicator" id="gas-indicator" aria-label="Expand GAS details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="subcategory-list" id="gas">
+                <p class="course-description"><strong>Possible Careers:</strong> College Professor, Civil Servant, Customer Service Representative, Sales Representative, Tourism Officer, Media Practitioner</p>
                 </div>
+            </article>
             </div>
         </section>
-    
+        
         <!-- Technical-Vocational-Livelihood Track -->
         <section class="track-section">
             <div class="track-header">
-                <h2 class="track-title">Technical-Vocational-Livelihood (TVL) Track</h2>
+            <h2 class="track-title">Technical-Vocational-Livelihood (TVL) Track</h2>
             </div>
-            <div class="course-grid">
-                <!-- ICT Strand -->
-                <div class="course-card expandable" onclick="toggleSpecializations('ict')">
-                    <img src="../../public/assets/images/ict.png" alt="ICT" class="course-image">
-                    <h3 class="course-title">Information & Communications Technology (ICT)</h3>
-                    <p class="course-description">Training in computer programming, hardware, and other digital skills.</p>
-                    <ul class="subcategory-list" id="ict" style="display: none;">
-                        <li>Computer Programming I - Java</li>
-                        <li>Computer Programming II - .NET Technologies</li>
-                        <li>Computer Systems Servicing (CSS)</li>
-                    </ul>
-                </div>
-    
-                <!-- Home Economics Strand -->
-                <div class="course-card expandable" onclick="toggleSpecializations('he')">
-                    <img src="../../public/assets/images/he.png" alt="Home Economics" class="course-image">
-                    <h3 class="course-title">Home Economics (HE)</h3>
-                    <p class="course-description">Training in culinary arts, hospitality management, and tourism.</p>
-                    <ul class="subcategory-list" id="he" style="display: none;">
-                        <li>Food and Beverages</li>
-                        <li>Cookery</li>
-                        <li>Bread and Pastry</li>
-                        <li>Beauty Care (Nail Care)</li>
-                        <li>Hairdressing</li>
-                        <li>Wellness Massage</li>
-                        <li>Dressmaking</li>
-                        <li>Tailoring</li>
-                    </ul>
-                </div>
-    
-                <!-- Industrial Arts Strand -->
-                <div class="course-card expandable" onclick="toggleSpecializations('ia')">
-                    <img src="../../public/assets/images/ia.png" alt="Industrial Arts" class="course-image">
-                    <h3 class="course-title">Industrial Arts</h3>
-                    <p class="course-description">Skills in welding, electrical installation, and repair.</p>
-                    <ul class="subcategory-list" id="ia" style="display: none;">
-                        <li>Shielded Metal Arc Welding (SMAW)</li>
-                        <li>Electrical Installation and Maintenance (EIM)</li>
-                        <li>Electronic Products Assembly and Servicing (EPAS)</li>
-                    </ul>
-                </div>
+            <div class="course-grid three-columns">
+            <!-- ICT Strand -->
+            <article class="course-card">
+                <img src="../../public/assets/images/ict.png" alt="ICT Strand" class="course-image">
+                <h3 class="course-title">Information & Communications Technology (ICT)</h3>
+                <p class="course-description">Training in computer programming, hardware, and digital skills.</p>
+                <button class="expand-indicator" id="ict-indicator" aria-label="Expand ICT details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="subcategory-list" id="ict">
+                <li>Computer Programming I - Java</li>
+                <li>Computer Programming II - .NET Technologies</li>
+                <li>Computer Systems Servicing (CSS)</li>
+                </ul>
+            </article>
+        
+            <!-- Home Economics -->
+            <article class="course-card">
+                <img src="../../public/assets/images/he.png" alt="Home Economics Strand" class="course-image">
+                <h3 class="course-title">Home Economics (HE)</h3>
+                <p class="course-description">Training in culinary arts, hospitality management, and tourism.</p>
+                <button class="expand-indicator" id="he-indicator" aria-label="Expand Home Economics details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="subcategory-list" id="he">
+                <li>Food and Beverages</li>
+                <li>Cookery</li>
+                <li>Bread and Pastry</li>
+                <li>Beauty Care (Nail Care)</li>
+                <li>Hairdressing</li>
+                <li>Wellness Massage</li>
+                <li>Dressmaking</li>
+                <li>Tailoring</li>
+                </ul>
+            </article>
+        
+            <!-- Industrial Arts -->
+            <article class="course-card">
+                <img src="../../public/assets/images/ia.png" alt="Industrial Arts Strand" class="course-image">
+                <h3 class="course-title">Industrial Arts</h3>
+                <p class="course-description">Skills in welding, electrical installation, and repair.</p>
+                <button class="expand-indicator" id="ia-indicator" aria-label="Expand Industrial Arts details">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="subcategory-list" id="ia">
+                <li>Shielded Metal Arc Welding (SMAW)</li>
+                <li>Electrical Installation and Maintenance (EIM)</li>
+                <li>Electronic Products Assembly and Servicing (EPAS)</li>
+                </ul>
+            </article>
             </div>
-        </section>
-    </main>
-    
-    <script>
-    function toggleSpecializations(id) {
-        var list = document.getElementById(id);
-        if (list.style.display === "none") {
-            list.style.display = "block";
-        } else {
-            list.style.display = "none";
-        }
-    }
-    </script>
-
+        </section>  
+      </main>      
+      
 <footer class="footer d-flex flex-column flex-md-row justify-content-between align-items-center p-4 flex-wrap">
     <div class="d-flex align-items-center text-start">
         <div class="footer-logo-container">
-            <img src="public/assets/images/limayshslogo.png" alt="School Logo" width="50">
+            <img src="../../public/assets/images/limayshslogo.png" alt="School Logo" width="50">
         </div>
         <div class="ms-3">
             <h1 class="h5 text-white fw-bold m-0 text-start">LIMAY SENIOR HIGH SCHOOL</h1>
@@ -176,12 +207,48 @@
     </div>
 
     <div class="d-flex mt-3 mt-md-0 ms-md-auto footer-links">
-        <a href="src/views/privacypolicy.html" class="text-white mx-2 text-decoration-none">Privacy Policy</a>
+        <a href="../../src/views/privacypolicy.html" class="text-white mx-2 text-decoration-none">Privacy Policy</a>
         <a href="#" class="text-white mx-2 text-decoration-none">Citizen's Charter</a>
         <a class="text-white mx-2" href="https://www.facebook.com/LimaySeniorHighSchool" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-facebook"></i>
         </a>
     </div>
 </footer>
+
+<!-- JavaScript for toggle functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const indicators = document.querySelectorAll('.expand-indicator');
+    
+      indicators.forEach(indicator => {
+        const icon = indicator.querySelector('i');
+    
+        indicator.setAttribute('role', 'button'); // Accessibility: treat divs like buttons
+        indicator.setAttribute('tabindex', '0');  // Make it keyboard-focusable
+    
+        indicator.addEventListener('click', toggleExpand);
+        indicator.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleExpand.call(this);
+          }
+        });
+    
+        function toggleExpand() {
+          const id = this.id.replace('-indicator', '');
+          const content = document.getElementById(id);
+          const isActive = content.classList.toggle('active');
+    
+          if (icon) {
+            icon.classList.toggle('fa-chevron-up', isActive);
+            icon.classList.toggle('fa-chevron-down', !isActive);
+          }
+    
+          // Optional: ARIA support
+          this.setAttribute('aria-expanded', isActive);
+        }
+      });
+    });
+    </script>    
 </body>
 </html>

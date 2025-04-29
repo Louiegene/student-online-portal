@@ -6,7 +6,6 @@ $(document).ready(function () {
     });
 });
 
-
 function prevSlide() {
     $('#carouselExample').carousel('prev');
 }

@@ -1,0 +1,128 @@
+/**
+ * Grades page specific styles
+ */
+
+/* Filter section styles */
+.filter-container {
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.filter-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #333;
+}
+
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Grades table styles */
+.table-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#gradesTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#gradesTable th {
+    position: sticky;
+    top: 0;
+    background-color: #00498d;
+    color: white;
+    z-index: 1;
+    padding: 12px;
+    text-align: center;
+}
+
+#gradesTable td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+#gradesTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#gradesTable tr:hover {
+    background-color: #e9ecef;
+}
+
+.table-hover-highlight {
+    background-color: #e9ecef !important;
+}
+
+.no-grades {
+    padding: 30px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #00498d;
+    border-color: #00498d;
+    padding: 8px 16px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #003a70;
+    border-color: #003a70;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .table-container {
+        width: 95%;
+        max-height: 350px;
+    }
+    
+    #gradesTable {
+        font-size: 13px;
+    }
+}

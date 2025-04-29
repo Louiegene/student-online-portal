@@ -1,0 +1,215 @@
+/* Combined Styles - Academic Records and Grades */
+
+/* General Container */
+.student-records-container,
+.academic-records-container {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Student Information Section */
+.student-info,
+.student-info-container {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 5px solid #004080;
+}
+
+.print-btn {
+    margin-bottom: 25px;
+}
+
+/* Filter Section */
+.filter-container {
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.filter-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #333;
+}
+
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Grade Tables Styling */
+.grade-table,
+.academic-records-table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+}
+
+.grade-table th,
+.academic-records-table th {
+    background-color: #004080;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.grade-table td,
+.academic-records-table td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+/* Quarter Average */
+.quarter-average {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Semester Summary */
+.summary-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.big-grade {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #004080;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.remarks-box {
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.big-remarks {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Remarks Color Styling */
+.outstanding {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.very-satisfactory {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.satisfactory {
+    background-color: #d1ecf1;
+    color: #055160;
+}
+
+.fairly-satisfactory {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.did-not-meet {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* Overall Summary */
+.overall-grade-card {
+    margin-top: 20px;
+}
+
+.overall-grade {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #212529;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.grade-header {
+    color: #004080;
+    border-bottom: 2px solid #e7f1ff;
+    padding-bottom: 10px;
+}
+
+/* No grades found message */
+.no-grades-message,
+.no-grades {
+    padding: 30px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Loading Spinner */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .big-grade {
+        font-size: 2.5rem;
+    }
+    
+    .big-remarks {
+        font-size: 1.2rem;
+    }
+    
+    .overall-grade {
+        font-size: 3rem;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .academic-records-table,
+    .grade-table {
+        font-size: 13px;
+    }
+}

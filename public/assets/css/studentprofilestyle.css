@@ -55,6 +55,10 @@
     background-color: #033d5a; /* Darker shade on hover */
 }
 
+.text-color {
+    color: #04477d;
+  }
+
 /* Mobile View */
 @media (max-width: 768px) {
     .profile-container {

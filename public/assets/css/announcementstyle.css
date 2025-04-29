@@ -55,11 +55,55 @@
     margin-top: 10px;
 }
 
-/* Adjustments for the Carousel on mobile */
-.carousel-inner img {
+/* Read More Button Styling */
+.expand-indicator {
+    cursor: pointer;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #04477d;
+    border: 1px solid #04477d;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expand-indicator:hover {
+    background-color: #2980b9;
+}
+
+/* Facebook Button Styling */
+.fb-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #1877F2; /* Facebook blue */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.fb-button:hover {
+    background-color: #1568c3;
+}
+
+.fb-button i {
+    margin-right: 8px;
+}
+
+/* Ensure carousel images resize well */
+.carousel-item img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 /* Mobile Responsive Styles */

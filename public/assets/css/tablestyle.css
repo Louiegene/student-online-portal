@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+    text-align: left; /* Ensure left alignment */
+}
+
+/* Hover effect */
+#gradesTable tbody tr:hover {
+    background-color: #0040801a;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+    form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    form label, form input, form button {
+        margin-bottom: 10px;
+    }
+}

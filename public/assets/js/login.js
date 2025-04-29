@@ -1,62 +1,67 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.getElementById("loginForm");
-    const errorMessage = document.getElementById("errorMessage");
-    const successPopup = document.getElementById("successPopup");
-    const failedPopup = document.getElementById("failedPopup");
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    if (loginForm) {
-        loginForm.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-            let formData = new FormData(this);
-
-            fetch(this.action, {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok " + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === "error") {
-                    if (errorMessage) {
-                        errorMessage.textContent = data.message; // Show error message
-                        errorMessage.style.display = "block";
-                    }
-                    if (failedPopup) {
-                        failedPopup.style.display = "flex";
-                        setTimeout(() => {
-                            failedPopup.style.display = "none";
-                        }, 3000); // Hide after 3 seconds
-                    }
-                } else {
-                    if (successPopup) {
-                        successPopup.style.display = "flex";
-                        setTimeout(() => {
-                            successPopup.style.display = "none";
-                            window.location.href = "../../src/views/student_page.html"; // Redirect if login is successful
-                        }, 3000); // Hide after 3 seconds
-                    }
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                if (errorMessage) {
-                    errorMessage.textContent = "An error occurred. Please try again.";
-                    errorMessage.style.display = "block";
-                }
-                if (failedPopup) {
-                    failedPopup.style.display = "flex";
-                    setTimeout(() => {
-                        failedPopup.style.display = "none";
-                    }, 3000); // Hide after 3 seconds
-                }
-            });
+    if (!username || !password) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Missing Fields',
+            text: 'Please enter both username and password.',
         });
-    } else {
-        console.error("Login form not found.");
+        return;
     }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '../../src/controllers/login.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function () {
+        try {
+            const response = JSON.parse(xhr.responseText);
+
+            if (xhr.status === 200 && response.status === 'success') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Welcome!',
+                    html: `<b>Welcome, ${response.username}</b>`,
+                    timer: 2000,
+                    showConfirmButton: false
+                }).then(() => {
+                    // Role-based redirection
+                    if (response.role === 'admin') {
+                        window.location.href = '../../src/views/admin_page.php';
+                    } else if (response.role === 'student') {
+                        window.location.href = '../../src/views/student_page.php';
+                    } else {
+                        window.location.href = '../../src/views/teacher_page.php';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: response.message
+                });
+            }
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Unexpected Error',
+                text: 'Failed to parse server response.',
+                footer: `<code>${xhr.responseText}</code>`
+            });
+        }
+    };
+
+    xhr.onerror = function () {
+        Swal.fire({
+            icon: 'error',
+            title: 'Network Error',
+            text: 'Could not reach the server. Please try again later.'
+        });
+    };
+
+    xhr.send(`username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
 });
