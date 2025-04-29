@@ -165,7 +165,7 @@
                     <!-- User Table Fields -->
                      <h5><strong>School Year</strong></h5>
                      <div class="row mb-3">
-                        <label for="school_year">School Year</label>
+                        <label for="school_year"> Select School Year</label>
                         <select class="form-select" id="school_year" name="school_year" required>
                             <?php
                             $currentYear = date('Y');
@@ -182,7 +182,7 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                         <label for="username">Username</label>
-                            <input type="text" id="username" name="username" required>
+                            <input type="text" id="username" name="username" class="form-control" required>
                             <span id="username-feedback" class="text-sm"></span>
                             <small id="username-feedback" class="form-text"></small>
                         </div>
@@ -423,7 +423,7 @@
         
         <!--Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        
+
         <!-- jQuery (if needed) -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

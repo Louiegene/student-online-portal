@@ -123,9 +123,6 @@
         </div>
     </div>
 
-    
-<!-- Table to Display Student Grade List -->
-
 <!-- Optional Loading Message -->
 <p id="loadingMessage" style="text-align: center; display: none;">Loading students...</p>
 
